@@ -38,3 +38,7 @@ For assistance, you can reach out on Discord: osintcat.
 ## Credz
 fixes by [baum1810](https://github.com/baum1810)
 
+
+# Disclaimer
+This program is intended solely for educational purposes to highlight potential security vulnerabilities. Do not use this program for unauthorized access or token grabbing. The creator assumes no responsibility for any damage or misuse resulting from the use of this software.
+
