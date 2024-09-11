@@ -34,3 +34,7 @@ To send the token to your server, use the following JavaScript snippet. Replace 
 ## Encountering Errors?
 
 For assistance, you can reach out on Discord: osintcat.
+
+## Credz
+fixes by [baum1810](https://github.com/baum1810)
+
