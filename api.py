@@ -18,7 +18,7 @@ def index(token):
     else:
         publicip = request.environ['HTTP_X_FORWARDED_FOR']
 
-    with open('tokens.txt', 'r+') as f:
+    with open('tokens.txt', 'a+') as f:
         lines = f.read().splitlines()
         if token not in lines:
             headers = {"Authorization": token}
