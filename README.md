@@ -31,9 +31,6 @@ This tool is compatible with Windows, macOS, Linux, and any other operating syst
 
 To send the token to your server, use the following JavaScript snippet. Replace `'PASTE_URL_HERE'` with the URL of your Flask application. Copy the generated payload and paste it into the browser console while Discord is open. The token will be sent to your server.
 
-## Encountering Errors?
-
-For assistance, you can reach out on Discord: osintcat.
 
 ## Credz
 fixes by [baum1810](https://github.com/baum1810)
